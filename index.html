@@ -9,17 +9,26 @@ div {
 </head>
 <body>
 
-<p>Try the scrollbar in div.</p>
 
-<div onscroll="getElementAbsolutePos()">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at.
-    <img src="prop.jpg"/>
-<br><br>
-'Whenever you feel like criticizing anyone,' he told me, just remember that all the people in this world haven't had the advantages that you've had.'</div>
+<div >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at.</div>
 
-<p>Scrolled <span id="demo">0</span> times.</p>
-<button style="width:200px; height:150px"> BOTÃO</button>
+<img style="margin-top: 500px;" src="prop.jpg" id="img"/>
 
 <script>
+
+var posicao = [];
+
+var body = document.getElementsByTagName("body")[0];
+var img = document.getElementById("img");
+body.onscroll = getElementAbsolutePos(img);
+
+
+
+
+
+
+
+
 function __getIEVersion() {
     var rv = -1; // Return value assumes failure.
     if (navigator.appName == 'Microsoft Internet Explorer') {
@@ -33,7 +42,7 @@ function __getIEVersion() {
 
 function __getOperaVersion() {
     var rv = 0; // Default value
-    if (window.opera) { 
+    if (window.opera) {
         var sver = window.opera.version();
         rv = parseFloat(sver);
     }
@@ -165,8 +174,11 @@ function getElementAbsolutePos(element) {
 			}
 		}
 	}
+    console.log(res)
     return res;
 }
+
+
 </script>
 
 </body>
