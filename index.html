@@ -1,56 +1,87 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-div {
-    font-size: 30px;
-}
-</style>
-</head>
-<body>
+  <head>
+    <style>
+      div {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti
+      molestiae provident dolore possimus! Reiciendis velit, possimus delectus
+      nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus
+      at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi
+      deleniti molestiae provident dolore possimus! Reiciendis velit, possimus
+      delectus nam iste et cupiditate, sit unde, accusantium totam illo
+      necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis
+      velit, possimus delectus nam iste et cupiditate, sit unde, accusantium
+      totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus!
+      Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde,
+      accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore
+      possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit
+      unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore
+      possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit
+      unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore
+      possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit
+      unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore
+      possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit
+      unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore
+      possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit
+      unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore
+      possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit
+      unde, accusantium totam illo necessitatibus at.
+    </div>
 
+    <img
+      style="margin-top: 600px; margin-bottom: 500px"
+      src="prop.jpg"
+      id="img"
+    />
 
-<div >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sequi deleniti molestiae provident dolore possimus! Reiciendis velit, possimus delectus nam iste et cupiditate, sit unde, accusantium totam illo necessitatibus at.</div>
+    <script>
+      var posicao = [];
 
-<img style="margin-top: 600px; margin-bottom: 500px;" src="prop.jpg" id="img"/>
+      const vh = Math.max(
+        document.documentElement.clientHeight || 0,
+        window.innerHeight || 0
+      );
 
-<script>
+      var body = document.getElementsByTagName("body")[0];
+      var img = document.getElementById("img");
+      var dic = {};
+      var date = new Date();
+      var timestamp = date.getTime();
 
-var posicao = [];
+      body.onscroll = funcao;
 
-const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+      function funcao() {
+        var date = new Date();
+        var timestamp = date.getTime();
+        var rect = img.getBoundingClientRect();
+        pos = rect.top - vh;
+        if (pos < 0 && pos > -rect.height) {
+          console.log("APARECEU NA TELA");
+          dic[timestamp] = Math.abs(pos);
+          console.log(dic);
+        }
+        if (pos < -rect.height) {
+          console.log("saiu da tela");
+        }
+      }
 
-var body = document.getElementsByTagName("body")[0];
-var img = document.getElementById("img");
-body.onscroll = funcao;
-
-function funcao(){
-	var rect = img.getBoundingClientRect();
-	pos = rect.top- vh
-	if (pos < 0 && pos > -rect.height ){
-		console.log("APARECEU NA TELA");
-		console.log(Math.abs(pos));
-	}
-	if(pos < -rect.height){
-		console.log("saiu da tela")
-	}
-	else{
-		console.log("AINDA NAO APARECEU")
-	}
-	
-}
-
-
-
-
-
-
-// --------------------------------------------------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------------------------------------------------
-
-
-</script>
-
-</body>
+      // --------------------------------------------------------------------------------------------------------------------------
+      // --------------------------------------------------------------------------------------------------------------------------
+      // --------------------------------------------------------------------------------------------------------------------------
+    </script>
+  </body>
 </html>
