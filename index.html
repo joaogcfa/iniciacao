@@ -48,6 +48,9 @@
       id="img"
     />
 
+    <button type="button" onclick="cria_jason()">Click Me!</button>
+
+    
     <script>
       var posicao = [];
 
@@ -58,6 +61,7 @@
 
       var body = document.getElementsByTagName("body")[0];
       var img = document.getElementById("img");
+
       var dic = {};
       var date = new Date();
       var timestamp = date.getTime();
@@ -79,9 +83,16 @@
         }
       }
 
+      function cria_jason(){
+        var fs = require('fs');
+
+        var json = JSON.stringify(dic);
+        fs.writeFile('propaganda.json', json, 'utf8', callback);
+      }
+
       // --------------------------------------------------------------------------------------------------------------------------
       // --------------------------------------------------------------------------------------------------------------------------
       // --------------------------------------------------------------------------------------------------------------------------
     </script>
   </body>
-</html>
+  </html>
