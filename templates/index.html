@@ -44,15 +44,16 @@
 
     <img
       style="margin-top: 600px; margin-bottom: 500px"
-      src="prop.jpg"
+      src="https://rockcontent.com/wp-content/uploads/2017/09/propaganda-tio-sam-771x1024.jpg"
       id="img"
     />
 
-    <form action="/" method="POST">
-      <input type="submit" value="Acabei">
-    </form>
+
+
     
     <script>
+
+      
       var posicao = [];
 
       const vh = Math.max(
@@ -68,7 +69,6 @@
       var timestamp = date.getTime();
 
       body.onscroll = funcao;
-
       function funcao() {
         var date = new Date();
         var timestamp = date.getTime();
@@ -84,9 +84,41 @@
         }
       }
 
+      
       // --------------------------------------------------------------------------------------------------------------------------
       // --------------------------------------------------------------------------------------------------------------------------
       // --------------------------------------------------------------------------------------------------------------------------
     </script>
+
+    <button onclick="mandar(dic)">acabei</button>
+    <script>
+      function mandar(dic){
+        fetch('/hello', {
+
+          // Declare what type of data we're sending
+          headers: {
+            'Content-Type': 'application/json'
+          },
+
+          // Specify the method
+          method: 'POST',
+
+          // A JSON payload
+          body: JSON.stringify(dic)
+          }).then(function (response) { // At this point, Flask has printed our JSON
+          return response.text();
+          }).then(function (text) {
+
+          console.log('POST response: ');
+
+          // Should be 'OK' if everything was successful
+          console.log(text);
+          });
+
+      }
+    </script>
+
+    
+
   </body>
   </html>

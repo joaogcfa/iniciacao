@@ -4,20 +4,20 @@ from datetime import datetime
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-db = SQLAlchemy(app)
 
 
+@app.route('/')
+def test_page():
+    # look inside `templates` and serve `index.html`
+    return render_template('index.html')
 
-@app.route('/', methods=['POST', 'GET'])
-def index():
+@app.route('/hello', methods=['POST'])
+def hello():
     if request.method == 'POST':
-        task_content = request.form['content']
-        new_task = Todo(content=task_content)
+        print('Incoming..')
+        print(request.get_json())  # parse as JSON
+        return 'OK', 200
 
-        try:
-            db.session.add(new_task)
-            db.session.commit()
-            return redirect('/')
-        except:
-            return 'There was an issue adding your task'
+
+if __name__ == "__main__":
+    app.run(debug=True)
