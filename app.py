@@ -31,8 +31,9 @@ def test_page():
 def hello():
     if request.method == 'POST':
         print('Incoming..')
-        print(request.get_json())
+        # print(request.get_json())
         html = request.get_json()
+        
         for tempo in html:
             time_stamp_html = tempo
             posicoes = html[tempo]
@@ -40,8 +41,12 @@ def hello():
             for itens in posicoes:
                 if itens == "y":
                     print("y: ", posicoes[itens])
+                    y= posicoes[itens]
                 else:
                     print("x: ", posicoes[itens])
+                    x = posicoes[itens]
+            db.child("usuarios").child("primeiro").push({time_stamp_html:{"x":x, "y":y}})
+
 
 
         #     min_position_html = html[tempo]
