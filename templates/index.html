@@ -43,7 +43,7 @@
     </div>
 
     <img
-      style="margin-top: 600px; margin-bottom: 500px"
+      style="margin-top: 600px; margin-bottom: 500px; height: 700px; width: 650px;"
       src="https://rockcontent.com/wp-content/uploads/2017/09/propaganda-tio-sam-771x1024.jpg"
       id="img"
     />
@@ -54,7 +54,6 @@
     <script>
 
       
-      var posicao = [];
 
       const vh = Math.max(
         document.documentElement.clientHeight || 0,
@@ -64,7 +63,7 @@
       var body = document.getElementsByTagName("body")[0];
       var img = document.getElementById("img");
 
-      var dic = {};
+      var main_dic = {};
       var date = new Date();
       var timestamp = date.getTime();
 
@@ -73,13 +72,17 @@
         var date = new Date();
         var timestamp = date.getTime();
         var rect = img.getBoundingClientRect();
-        pos = rect.top - vh;
-        if (pos < 0 && pos > -rect.height) {
+        var pos_top = rect.top - vh;
+        var pos_left = rect.left;
+        if (pos_top < 0 && pos_top > -rect.height) {
+          var pre_dic = {};
           console.log("APARECEU NA TELA");
-          dic[timestamp] = Math.abs(pos);
-          console.log(dic);
+          pre_dic["x"] = Math.abs(pos_top);
+          pre_dic["y"] = pos_left;
+          main_dic[timestamp] = pre_dic;
+          console.log(main_dic);
         }
-        if (pos < -rect.height) {
+        if (pos_top < -rect.height) {
           console.log("saiu da tela");
         }
       }
@@ -90,9 +93,10 @@
       // --------------------------------------------------------------------------------------------------------------------------
     </script>
 
-    <button onclick="mandar(dic)">acabei</button>
+    <button onclick="mandar(main_dic)">acabei</button>
     <script>
-      function mandar(dic){
+      function mandar(main_dic){
+        from = "HTML"
         fetch('/hello', {
 
           // Declare what type of data we're sending
@@ -102,9 +106,9 @@
 
           // Specify the method
           method: 'POST',
-
+          
           // A JSON payload
-          body: JSON.stringify(dic)
+          body: JSON.stringify(main_dic)
           }).then(function (response) { // At this point, Flask has printed our JSON
           return response.text();
           }).then(function (text) {
