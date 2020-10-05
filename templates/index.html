@@ -77,8 +77,8 @@
         if (pos_top < 0 && pos_top > -rect.height) {
           var pre_dic = {};
           console.log("APARECEU NA TELA");
-          pre_dic["x"] = Math.abs(pos_top);
-          pre_dic["y"] = pos_left;
+          pre_dic["y"] = Math.abs(pos_top);
+          pre_dic["x"] = pos_left;
           main_dic[timestamp] = pre_dic;
           console.log(main_dic);
         }
