@@ -1,0 +1,12 @@
+.header {
+  width: 100%;
+}
+.container {
+  width: 60%;
+  margin-top: 40px;
+  margin-left: 20px;
+}
+.container-txt {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="teste.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <img src="header.png" class="header" style="width: 100%" />
+    <div class="container">
+      <p>
+        <strong style="margin-bottom: 0px">Dicas de informática em 2020!</strong
+        ><br />
+        Autor: wallyvianna | Postado em Notícias
+      </p>
+      <br />
+
+      <p class="container-txt">
+        Este texto não se propõe a dar verdades finais sobre uso da informática,
+        mas sim orientar profissionais e pessoas que estão imersos na vida
+        digital, hoje.<br />
+        <br />
+        <br />
+
+        O mundo muda, a tecnologia se atualiza e nossos hábitos caminham juntos.
+        Por isso ser digital hoje é diferente de 1990, quando o Windows (como
+        conhecemos hoje) era um recém-chegado e diverso de 1993 quando a
+        Internet comercial chegou ao Brasil.<br />
+        <br />
+        <br />
+
+        <strong>– Backup agora é na nuvem.</strong><br />
+        PenDrive, HD, DVD são mídias temporárias. Do mesmo jeito que você tinha
+        (ou tem?) cópias de seus arquivos de trabalho no HD e no PenDrive, tenha
+        cópias em discos virtuais, na Internet. Você pode pagar pra ter espaço
+        ou pode usar uma conta grátis diferente para cada tipo de backup: uma
+        pra trabalho, outra pra portfólio, uma terceira pra trabalho em equipe e
+        assim por diante. Se um desses backups falhar, o que hoje é raríssimo,
+        você tem outros. <br />
+        <b>Dicas:</b> Google Drive, One Drive, DropBox, Mega (este último
+        recomendado mas com restrições – faça testes antes de usar
+        profissionalmente).
+        <br />
+        <br />
+        <strong>– Software pode ser portátil ou na nuvem. </strong><br />
+        Software está virando sistema de assinatura (aluguel), assim sendo você
+        pode pagar por período de uso (mês, semestre, ano). Ou pode usar
+        software portátil/gratuito equivalente. Ou, melhor ainda: usar online,
+        sem ter de instalar nada. Os dois últimos casos te permitem trabalhar em
+        trânsito, com ou sem Internet.<br />
+        <b>Exemplos: Google Docs</b> (pacote office,online),
+        <b> Lumen 5 </b>(editor de video online), <b>Photo Collage</b> (editor
+        de fotos online).<br />
+        <br />
+        <strong>– Ter computador de mesa em casa é uma opção.</strong><br />
+        Você pode usar computador fora de casa, já que seu software de trabalho
+        e arquivos podem estar online. Tenha um laptop e PC de mesa, mas se
+        puder optar tenha um dos dois, tendo como substituto o PC fora de sua
+        casa.<br />
+        <b>Dicas:</b> locais públicos de acesso a internet, Cybercafés,
+        escritórios de co-working (mais caros)<br />
+        <br />
+        <img
+          src="Imagem1.png"
+          style="justify-content: center; align-items: center"
+        /><br />
+        Photo by Jonathan Borba on Unsplash<br />
+        <br />
+        <strong
+          >– WhatsApp, Facebook, não é lugar pra tratar de negócios.</strong
+        ><br />
+        Eles são redes sociais, uma variação do jornal, TV, revista, rádio ou
+        canal de comunicação entre colegas, vizinhos e amigos. Podem até ser
+        usados como prova documental de acordos comerciais mas seu e-mail sim, é
+        lugar para formalizar e guardar comunicações de trabalho.
+        <br />
+        <br />
+        O motivo é meio óbvio, mas segue aqui:<br />
+        <strong
+          >– O celular não foi feito pra guardar assuntos de trabalho.</strong
+        ><br />
+        Ele lota rápido, se precisar zerar o aparelho, recuperar o backup pode
+        não ser algo confiável, se sua conta de backup – associada ao celular –
+        estiver cheia.
+        <br />
+        <br />
+        Copie tudo que for importante regularmente (todos os dias) para nuvem.
+        <br />
+        <br />
+        Use e abuse do Bluetooth e rede Wi-Fi pra copiar pra seu computador se
+        for o caso (fios e cabos pra copiar dados felizmente estão com os dias
+        contados – e já vão tarde, já que não duram muito).
+        <br />
+        <b>Dicas:</b> Como migrar arquivos do celular para o PC com rede
+        Bluetooth ou Wi-fi.<br />
+        <br />
+        <strong>– Guarde seus dados pessoais na nuvem.</strong><br />
+        Isso inclui agenda de celular, e-mails, documentos escaneados… Não há
+        coisa mais deletéria do que dizer ao cliente que sua vida parou porque o
+        computador pifou. Você pode ter uma conta de e-mail ou disco virtual só
+        pra documentos importantes e outra conta pro dia-a-dia. E enquanto você
+        tenta esvaziar sua caixa postal sua vida profissional continua
+        normalmente.<br />
+
+        <br />
+        <strong>Outras questões envolvendo computadores</strong>
+        computadores (de mão, mesa, etc) podem ser resolvidas contratando um
+        técnico de informática, seja pra evitar que seu computador ou sua caixa
+        postal de e-mail fiquem lotados, seja pra garantir que seu HD não
+        precise ser formatado/zerado a cada 6 meses. normalmente.<br />
+        Existem soluções pra quase tudo, basta procurar a pessoa certa no
+        mercado.<br />
+        <br />
+        <b>Deixe seu comentário! </b>
+        <br />
+        <br />
+        <b>Seja o primeiro a comentar! </b>
+        <br />
+      </p>
+      <video
+        width="33%"
+        height="auto"
+        autoplay
+        class="video"
+        id="vid"
+        style="position: fixed; top: 240px; right: 10px"
+      >
+        <source src="coffe.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <script>
+      document.getElementById("vid").play();
+
+      const vh = Math.max(
+        document.documentElement.clientHeight || 0,
+        window.innerHeight || 0
+      );
+
+      var body = document.getElementsByTagName("body")[0];
+      var img = document.getElementById("img");
+
+      var main_dic = {};
+      var date = new Date();
+      var timestamp = date.getTime();
+
+      body.onscroll = funcao;
+      function funcao() {
+        var date = new Date();
+        var timestamp = date.getTime();
+        var rect = img.getBoundingClientRect();
+        var pos_top = rect.top - vh;
+        var pos_left = rect.left;
+        if (pos_top < 0 && pos_top > -rect.height) {
+          var pre_dic = {};
+          console.log("APARECEU NA TELA");
+          pre_dic["y"] = Math.abs(pos_top);
+          pre_dic["x"] = pos_left;
+          main_dic[timestamp] = pre_dic;
+          console.log(main_dic);
+        }
+        if (pos_top < -rect.height) {
+          console.log("saiu da tela");
+        }
+      }
+
+      // --------------------------------------------------------------------------------------------------------------------------
+      // --------------------------------------------------------------------------------------------------------------------------
+      // --------------------------------------------------------------------------------------------------------------------------
+    </script>
+
+    <button onclick="mandar(main_dic)">acabei</button>
+    <script>
+      function mandar(main_dic) {
+        from = "HTML";
+        fetch("/hello", {
+          // Declare what type of data we're sending
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          // Specify the method
+          method: "POST",
+
+          // A JSON payload
+          body: JSON.stringify(main_dic),
+        })
+          .then(function (response) {
+            // At this point, Flask has printed our JSON
+            return response.text();
+          })
+          .then(function (text) {
+            console.log("POST response: ");
+
+            // Should be 'OK' if everything was successful
+            console.log(text);
+          });
+      }
+    </script>
+  </body>
+</html>
