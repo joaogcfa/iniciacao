@@ -122,7 +122,8 @@
         height="auto"
         class="video"
         id="vid"
-        style="position: fixed; top: 240px; right: 10px"
+        controls
+        style="position: fixed; top: 400px; right: 10px"
       >
         <source src="coffe.mp4" type="video/mp4" />
       </video>
@@ -144,7 +145,7 @@
 
       body.onscroll = funcao;
       function funcao() {
-        document.getElementById("vid").play();
+        // document.getElementById("vid").play();
         var date = new Date();
         var timestamp = date.getTime();
         // var rect = img.getBoundingClientRect();
